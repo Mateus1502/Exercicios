@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout de Colunas com Float</title>
+    <style>
+        .container {
+            overflow: hidden; /* Limpa o float */
+        }
+        .coluna-esquerda {
+            float: left;
+            width: 30%;
+            background-color: #f0f8ff; /* Azul claro para visualização */
+            padding: 15px;
+            box-sizing: border-box; /* Inclui padding na largura total */
+        }
+        .coluna-direita {
+            float: left;
+            width: 70%;
+            background-color: #e6e6fa; /* Lavanda claro para visualização */
+            padding: 15px;
+            box-sizing: border-box; /* Inclui padding na largura total */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="coluna-esquerda">
+            <h2>Coluna Esquerda</h2>
+            <p>Conteúdo da coluna esquerda. Esta coluna ocupa 30% da largura da página.</p>
+        </div>
+        <div class="coluna-direita">
+            <h2>Coluna Direita</h2>
+            <p>Conteúdo da coluna direita. Esta coluna ocupa 70% da largura da página.</p>
+        </div>
+    </div>
+</body>
+</html>
