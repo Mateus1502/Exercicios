@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilização de Botões de Rádio e Checkboxes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .custom-radio,
+        .custom-checkbox {
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            user-select: none;
+        }
+
+        .custom-radio input,
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .radio-checkmark,
+        .checkbox-checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 2px solid #007BFF;
+            background-color: #fff;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .checkbox-checkmark {
+            border-radius: 4px;
+        }
+
+        .custom-radio input:checked ~ .radio-checkmark {
+            background-color: #007BFF;
+            border-color: #007BFF;
+        }
+
+        .custom-checkbox input:checked ~ .checkbox-checkmark {
+            background-color: #007BFF;
+            border-color: #007BFF;
+        }
+
+        .radio-checkmark:after,
+        .checkbox-checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .custom-radio input:checked ~ .radio-checkmark:after {
+            display: block;
+            left: 8px;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        .custom-checkbox input:checked ~ .checkbox-checkmark:after {
+            display: block;
+            left: 6px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Botões de Rádio</h2>
+        <label class="custom-radio">
+            <input type="radio" name="radio" value="option1">
+            <span class="radio-checkmark"></span>
+            Opção 1
+        </label>
+        <label class="custom-radio">
+            <input type="radio" name="radio" value="option2">
+            <span class="radio-checkmark"></span>
+            Opção 2
+        </label>
+
+        <h2>Checkboxes</h2>
+        <label class="custom-checkbox">
+            <input type="checkbox" value="option1">
+            <span class="checkbox-checkmark"></span>
+            Opção 1
+        </label>
+        <label class="custom-checkbox">
+            <input type="checkbox" value="option2">
+            <span class="checkbox-checkmark"></span>
+            Opção 2
+        </label>
+    </div>
+</body>
+</html>
